@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Selection</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://kit.fontawesome.com/7b4dd784d1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	
+    <div class="nav_cont">
+        <nav>
+            <button class="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="menu" id="menu">
+                <li><a id="Home" href="index.html">Home</a></li>
+                <li><a class="hover" id="CoffeeSelection" href="Coffee_Selection.html">Coffee Selection</a></li>
+                <li><a class="hover" id="BrewingEquipment" href="BrewingEquipment.html">Brewing Equipment</a></li>
+                <li><a class="hover" id="Events&Workshops" href="Events_and_Workshops.html">Events and Workshops</a></li>
+                <li><a class="hover" id="SpeicalOffers&Suscription" href="Offer_Subscription.html">Special Offers</a></li>
+                <li><a class="hover" id="ShoppingCart" href="ShoppingCart.html">Cart</a></li>
+                <li><a class="hover" id="login" href="login.html">Log In</a></li>
+                <li><a class="hover" id="Sign_up" href="sign_up.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const menu = document.querySelector('.menu');
+        let isTransitioning = false;
+
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (isTransitioning) return;
+            
+            isTransitioning = true;
+            hamburger.classList.toggle('active');
+            menu.classList.toggle('active');
+            
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 500);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !hamburger.contains(e.target) && menu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                menu.classList.remove('active');
+            }
+        });
+    </script>
+	
+    <div id="popup" class="popup">
+        <div class="popup-content">
+          <span class="close-btn">&times;</span>
+          <p>Welcome! Enjoy a special offer for first-time visitors: 10% off your first coffee selection!</p>
+        </div>
+      </div>
+      
+	<!--products -->
+	<h2>Hot Picks</h2>
+
+    <div class="wrapper">
+       <label for="search"><input type="text" placeholder="search.."></label> 
+        <i class="fa-solid fa-magnifying-glass"></i> 
+      </div>
+    <!--search box-->
+    
+                <section class="benefit-container">
+                   
+                    <div class="benefit">
+                        <img class="img1" src="coffee1.jpg" alt="AmericanoCoffee">
+                        <h2>Americano Coffee</h2>
+                        <p>Americano: diluted espresso, rich, bold flavor, smooth finish, coffee lovers</p>
+                        
+                        <div class="more-info" id="more-info1">
+                            <p>Description: A classic coffee made by diluting espresso with hot water, resulting in a smooth, rich flavor without the intensity of pure espresso.</p>
+                            <p>Tasting Notes: Bold, smooth, with a slightly bitter edge. A mellow, rich finish with a deep espresso flavor.</p>
+                            <p> Brewing Methods: Best brewed using an espresso machine with hot water added to the shot, but can also be made using Aeropress or Moka pot and hot water for a similar effect</p>
+                        </div>
+                        
+                        <button class="read-more-btn" onclick="toggleMoreInfo(event)">Read More</button>
+                        
+                        <h2 class="price">₹220</h2>
+                        <button class="order-btn" onclick="add_to_basket(event)">Order Now</button>
+                    </div>
+                
+                    <div class="benefit">
+                        <img class="img2" src="coffee3.jpg" alt="UB Ports and Wireless Charging">
+                        <h2>Espresso coffee</h2>
+                        <p>It's made by forcing high-pressured hot water through finely ground coffee beans</p>
+                        <div class="more-info" id="more-info2">
+                            <p>Description: A concentrated coffee brewed by forcing hot water through finely-ground coffee beans. Known for its strong, bold flavor and rich crema.</p>
+                            <p>Tasting Notes: Intense, rich, with notes of dark chocolate and caramel. Thick, smooth texture with a slightly bitter but balanced finish.</p>
+                            <p> Brewing Methods: Best brewed using an espresso machine for authentic pressure extraction. Can also be brewed using a Moka pot for a stovetop espresso-like experience.</p>
+                        </div>
+                        
+                        <button class="read-more-btn" onclick="toggleMoreInfo(event)">Read More</button>
+                        
+                        <h2 class="price">₹132</h2>
+                        <button class="order-btn" onclick="add_to_basket(event)">Order Now</button> <!-- Button added -->
+                    </div>
+                
+                    <div class="benefit">
+                        <img  class="img3" src="drink-leaf-fabric.jpg" alt="Suitable Load Capacity"> 
+                        <h2>Black Coffee</h2>
+                        <p>Black coffee is simply coffeewith nothing added - no cream, no milk, no sweetener.</p>
+                        <div class="more-info" id="more-info3">
+                            <p>Description: Pure coffee brewed without milk or sugar, allowing the natural flavors of the beans to shine. It’s a simple and versatile drink enjoyed by purists.</p>
+                            <p>Tasting Notes: Clean, bold, and aromatic with slight acidity. Flavors can range from fruity and floral to earthy and nutty, depending on the coffee beans used.</p>
+                            <p> Brewing Methods: Can be brewed using various methods such as drip coffee maker, French press, pour-over, or AeroPress to achieve different flavor profiles.</p>
+                        </div>
+                        
+                        <button class="read-more-btn" onclick="toggleMoreInfo(event)">Read More</button>
+                        <h2 class="price">₹176</h2>
+                        <button class="order-btn" onclick="add_to_basket(event)">Order Now</button> <!-- Button added -->
+                    </div>
+                    <div class="benefit">
+                        <img  class="img3" src="images/3d-rendering-chinese-reunion-dinner-drink(1).jpg" alt="Suitable Load Capacity"> 
+                        <h2>Classic Iced coffee</h2>
+                        <p>Savour our premium coffee made with top 3% Arabica beans in ...</p>
+                        <div class="more-info" id="more-info4">
+                            <p>Description: A refreshing coffee brewed hot and then chilled over ice, offering a smooth and crisp alternative to hot coffee, perfect for warm days.</p>
+                            <p>Tasting Notes: Light, smooth, with mild acidity and a hint of sweetness. Often has subtle caramel or chocolate undertones, depending on the beans.</p>
+                            <p>Brewing Methods: Best brewed using drip coffee or pour-over, then cooled and poured over ice. Can also be made with cold brew for a less acidic, smoother taste.</p>
+                        </div>
+                        
+                        <button class="read-more-btn" onclick="toggleMoreInfo(event)">Read More</button>
+                        <h2 class="price">₹264 </h2>
+                        <button class="order-btn" onclick="add_to_basket(event)">Order Now</button> <!-- Button added -->
+                    </div>
+
+                    <div class="benefit">
+                        <img  class="img1" src="images/Caffe_Latte.jpg" alt="Suitable Load Capacity"> 
+                        <h2>Caffe Latte</h2>
+                        <p>Savour our premium coffee made with top 3% Arabica beans in ...</p>
+                        <div class="more-info" id="more-info5">
+                            <p>Description: A creamy coffee drink made with a shot of espresso and steamed milk, offering a mild, velvety flavor with a light foam on top.</p>
+                            <p>Tasting Notes: Smooth, rich, and creamy with subtle hints of espresso. Sweet and slightly caramelized flavors from the milk, balanced by the coffee’s depth.</p>
+                            <p>Brewing Methods: Best made with an espresso machine to pull a shot of espresso, then topped with steamed milk. Can also be made using a Moka pot or AeroPress with heated milk for a home-friendly version.</p>
+                        </div>
+                        
+                        <button class="read-more-btn" onclick="toggleMoreInfo(event)">Read More</button>
+                        <h2 class="price">₹308</h2>
+                        <button class="order-btn" onclick="add_to_basket(event)">Order Now</button> <!-- Button added -->
+                    </div>
+
+                    <div class="benefit">
+                        <img  class="img3" src="images/Iced_Caffè_Latte.png" alt="Suitable Load Capacity"> 
+                        <h2>Caramel Macchiato </h2>
+                        <p>Freshly steamed milk with vanilla-flavored syrup is marked with espresso and topped with caramel drizzle.</p>
+                        <div class="more-info" id="more-info6">
+                            <p>Description: A sweet and creamy coffee drink made with espresso, steamed milk, vanilla syrup, and topped with caramel drizzle, offering a delightful blend of flavors.
+                            </p>
+                            <p>Tasting Notes: Rich and creamy with layers of vanilla and espresso flavors. The caramel adds a sweet, buttery note, while the espresso provides a robust foundation.</p>
+                            <p>Brewing Methods: Best prepared with an espresso machine for brewing the espresso shot. Steamed milk can be frothed using a steam wand, and vanilla syrup can be added before layering the espresso on top. For a home-friendly version, you can use a Moka pot for espresso and heat milk using a stovetop or microwave.</p>
+                        </div>
+                        
+                        <button class="read-more-btn" onclick="toggleMoreInfo(event)">Read More</button>
+                        <h2 class="price">₹352</h2>
+                        <button class="order-btn" onclick="add_to_basket(event)">Order Now</button> <!-- Button added -->
+                    </div>
+
+                    <div class="benefit">
+                        <img  class="img2" src="images/Cappuccino.png" alt="Suitable Load Capacity"> 
+                        <h2>Cappuccino</h2>
+                        <p>Dark, Rich in flavour espresso lies in wait under a smoothed and stretched layer of thick foam. It's truly the height of our baristas' craft.</p>
+                        <div class="more-info" id="more-info7">
+                            <p>Description: A classic coffee drink made with equal parts espresso, steamed milk, and milk foam, creating a rich and balanced beverage with a delightful texture.</p>
+                            <p>Tasting Notes: Bold and robust from the espresso, complemented by the creamy texture of the steamed milk. The foam adds a lightness, while the flavors can range from nutty to chocolatey, depending on the coffee beans used.</p>
+                            <p>Brewing Methods: Best prepared using an espresso machine to brew a shot of espresso, followed by steaming milk and frothing it to create a thick layer of foam. A Moka pot can also be used for espresso, and milk can be frothed separately using a whisk or frother.</p>
+                        </div>
+                        
+                        <button class="read-more-btn" onclick="toggleMoreInfo(event)">Read More</button>
+                        <h2 class="price">₹308</h2>
+                        <button class="order-btn" onclick="add_to_basket(event)">Order Now</button> <!-- Button added -->
+                    </div>
+
+                    <div class="benefit">
+                        <img  class="img3" src="images/Iced_White_Mocha.jfif" alt="Suitable Load Capacity"> 
+                        <h2>Iced White Mocha </h2>
+                        <p>Espresso combined with white mocha sauce and milk over ice. Topped with whipped vanilla topping.</p>
+                        <div class="more-info" id="more-info8">
+                            <p>Description: A sweet and creamy coffee beverage made with espresso, milk, and white chocolate sauce, served over ice for a refreshing treat.</p>
+                            <p>Tasting Notes: Rich and indulgent with a creamy texture. The white chocolate adds a sweet, smooth flavor, perfectly balanced by the boldness of the espresso.</p>
+                            <p>Brewing Methods: Best prepared using an espresso machine for brewing a shot of espresso, combined with white chocolate syrup. Pour over ice, then add cold milk (dairy or non-dairy) to finish. For a home-friendly version, you can use a Moka pot for espresso and mix with heated white chocolate before chilling and pouring over ice.</p>
+                        </div>
+                        
+                        <button class="read-more-btn" onclick="toggleMoreInfo(event)">Read More</button>
+                        <h2 class="price">₹396</h2>
+                        <button class="order-btn" onclick="add_to_basket(event)">Order Now</button> <!-- Button added -->
+                    </div>
+                    
+                    <div class="message-box">Item added to basket!</div>
+                    <div class="message-box2">Item could not be added to basket.</div>
+
+                </section>
+			    <footer>
+                    <div class="waves">
+                        <div class="wave" id="wave1"></div>
+                        <div class="wave" id="wave2"></div>
+                        <div class="wave" id="wave3"></div>
+                        <div class="wave" id="wave4"></div>
+                    </div>
+                    <div class="footer">
+                        <div class="webs-details">
+                            <p>A standing desk website typically provides <br>information and products related to ergonomic<br> workstations that allow users to alternate between <br>sitting and standing positions while working....</p>
+                        </div>
+                        <div class="row social_icon">
+                            <ul>
+                                <li><a href="https://www.facebook.com/login/"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                                <li><a href="https://x.com/i/flow/login?redirect_after_login=%2Fsteeevg"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                                <li><a href="https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fonetap%2F%3F__coig_login%3D1"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                                <li><a href="https://www.google.com/maps/place/VIIE+-+Vidyalankar+Institute+for+International+Education/@19.0216579,72.8683107,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7cf699771b8df:0x3f49b4a04fc3d68c!8m2!3d19.0216579!4d72.8708856!16s%2Fg%2F11fj049qxm?authuser=0&entry=ttu&g_ep=EgoyMDI0MTAyMC4xIKXMDSoASAFQAw%3D%3D"><ion-icon name="location-outline"></ion-icon></a></li>
+                            </ul>
+                        </div>
+                        <div class="location">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1885.9786966006764!2d72.86969633859303!3d19.021599045542974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7cf3949dda405%3A0xefd46c9d73152f82!2sVIDYALANKAR%20INSTITUTE%20OF%20TECHNOLOGY%2C%20Mumbai%2C%20Maharashtra%20400037!5e0!3m2!1sen!2sin!4v1727776679608!5m2!1sen!2sin" 
+                                allowfullscreen 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </footer>
+                <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+                <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+                <script src="Coffee_Selection.js"></script>
+                <script src="Cart.js"></script>
+
+                
+        
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brewing Equipment</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+	
+
+    <div class="nav_cont">
+        <nav>
+            <button class="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="menu" id="menu">
+                <li><a id="Home" href="index.html">Home</a></li>
+                <li><a class="hover" id="CoffeeSelection" href="Coffee_Selection.html">Coffee Selection</a></li>
+                <li><a class="hover" id="BrewingEquipment" href="BrewingEquipment.html">Brewing Equipment</a></li>
+                <li><a class="hover" id="Events&Workshops" href="Events_and_Workshops.html">Events and Workshops</a></li>
+                <li><a class="hover" id="SpeicalOffers&Suscription" href="Offer_Subscription.html">Special Offers</a></li>
+                <li><a class="hover" id="ShoppingCart" href="ShoppingCart.html">Cart</a></li>
+                <li><a class="hover" id="login" href="login.html">Log In</a></li>
+                <li><a class="hover" id="Sign_up" href="sign_up.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const menu = document.querySelector('.menu');
+        let isTransitioning = false;
+
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (isTransitioning) return;
+            
+            isTransitioning = true;
+            hamburger.classList.toggle('active');
+            menu.classList.toggle('active');
+            
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 500);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !hamburger.contains(e.target) && menu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                menu.classList.remove('active');
+            }
+        });
+    </script>
+	
+	<!--products -->
+    <main>
+        <div class="card">
+            <div class="card__title">
+                <div class="icon">
+                    <a href="index.html"><i class="fa fa-arrow-left"></i></a>
+                </div>
+              
+            </div>
+            <div class="card__body">
+                <div class="half">
+                    <div class="featured_text">
+                        <h1>Boutique</h1><br>
+                        <p class="sub">Coffee Grinder</p>
+                        <p class="price">₹15,510.00</p>
+                    </div>
+                    <div class="image">
+                        <img src="brewingequiment2.jpg" alt="">
+                    </div>
+                </div>
+                <div class="half">
+                    <div class="description">
+                        <p>Presenting the Bean Boutique  Doser Coffee Grinder, a vital appliance for coffee shops looking to grind their beans precisely and consistently. This grinder’s fine craftsmanship guarantees that every coffee bean is ground to the ideal consistency, releasing the coffee’s entire range of flavours and fragrances.</p>
+                    </div>
+                    <span class="stock"><i class="fa fa-pen"></i> In stock</span>
+                    <div class="reviews">
+                        <ul class="stars">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star-o"></i></li>
+                        </ul>
+                        <span>(64 reviews)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card__footer">
+                <div class="action">
+                    <button type="button" onclick="add_to_cart(event)">Add to cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card__title">
+                <div class="icon">
+                    <a href="index.html"><i class="fa fa-arrow-left"></i></a>
+                </div>
+                
+            </div>
+            <div class="card__body">
+                <div class="half">
+                    <div class="featured_text">
+                        <h1>Boutique</h1><br>
+                        <p class="sub">AeroPress</p>
+                        <p class="price">₹2000.00</p>
+                    </div>
+                    <div class="image">
+                        <img src="aeropress.jpg" alt="">
+                    </div>
+                </div>
+                <div class="half">
+                    <div class="description2">
+                        <p>Elevate your coffee experience with our premium Aeropress, designed for coffee lovers who appreciate the art of brewing. With its innovative design, the Aeropress allows you to create rich, full-bodied coffee in just minutes, unlocking a world of flavors that traditional brewing methods can’t match. At our boutique shop, we offer a carefully curated selection of unique coffee beans sourced from around the globe, ensuring that each cup you brew is an... </p>
+                    </div>
+                    <span class="stock"><i class="fa fa-pen"></i> In stock</span>
+                    <div class="reviews">
+                        <ul class="stars">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star-o"></i></li>
+                        </ul>
+                        <span>(64 reviews)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card__footer">
+                
+                <div class="action">
+                    <button type="button" onclick="add_to_cart(event)">Add to cart</button>
+                </div>
+            </div>
+        </div>   
+
+    </main>
+    <div class="main2">
+        <div class="card">
+            <div class="card__title">
+                <div class="icon">
+                    <a href="index.html"><i class="fa fa-arrow-left"></i></a>
+                </div>
+              
+            </div>
+            <div class="card__body">
+                <div class="half">
+                    <div class="featured_text">
+                        <h1>Boutique</h1><br>
+                        <p class="sub">Coffee Scale</p>
+                        <p class="price">₹2000.00</p>
+                    </div>
+                    <div class="image">
+                        <img src="coffee_scale.jfif" alt="">
+                    </div>
+                </div>  
+                <div class="half">
+                    <div class="description">
+                        <p>Achieve coffee perfection with our precision coffee scales! Designed for enthusiasts, these scales ensure you brew with accuracy every time. Elevate your morning ritual and explore our boutique selection of specialty beans and accessories. Visit us today to find the perfect balance in every cup!</p>
+                    </div>
+                    <span class="stock"><i class="fa fa-pen"></i> In stock</span>
+                    <div class="reviews">
+                        <ul class="stars">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star-o"></i></li>
+                        </ul>
+                        <span>(64 reviews)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card__footer">
+                <div class="action">
+                    <button type="button" onclick="add_to_cart(event)">Add to cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card__title">
+                <div class="icon">
+                    <a href="index.html"><i class="fa fa-arrow-left"></i></a>
+                </div>
+                
+            </div>
+            <div class="card__body">
+                <div class="half">
+                    <div class="featured_text">
+                        <h1>Boutique</h1><br>
+                        <p class="sub">AeroPress</p>
+                        <p class="price">₹5510.00</p>
+                    </div>
+                    <div class="image">
+                        <img src="aeropress.jpg" alt="">
+                    </div>
+                </div>
+                <div class="half">
+                    <div class="description">
+                        <p>The portable coffee makers from AeroPress come in a variety of sizes and designs. Here's which one brews best for your needs.</p>
+                    </div>
+                    <span class="stock"><i class="fa fa-pen"></i> In stock</span>
+                    <div class="reviews">
+                        <ul class="stars">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star-o"></i></li>
+                        </ul>
+                        <span>(64 reviews)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card__footer">
+                
+                <div class="action">
+                    <button type="button" onclick="add_to_cart(event)">Add to cart</button>
+                </div>
+            </div>
+        </div>   
+
+    </div>
+
+    <div class="message-box">Item added to basket!</div>
+    <div class="message-box2">Item could not be added to basket.</div>
+
+    <!--Products end-->
+			    <footer>
+                    <div class="waves">
+                        <div class="wave" id="wave1"></div>
+                        <div class="wave" id="wave2"></div>
+                        <div class="wave" id="wave3"></div>
+                        <div class="wave" id="wave4"></div>
+                    </div>
+                    <div class="footer">
+                        <div class="webs-details">
+                            <p>A standing desk website typically provides <br>information and products related to ergonomic<br> workstations that allow users to alternate between <br>sitting and standing positions while working....</p>
+                        </div>
+                        <div class="row social_icon">
+                            <ul>
+                                <li><a href="https://www.facebook.com/login/"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                                <li><a href="https://x.com/i/flow/login?redirect_after_login=%2Fsteeevg"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                                <li><a href="https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fonetap%2F%3F__coig_login%3D1"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                                <li><a href="https://www.google.com/maps/place/VIIE+-+Vidyalankar+Institute+for+International+Education/@19.0216579,72.8683107,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7cf699771b8df:0x3f49b4a04fc3d68c!8m2!3d19.0216579!4d72.8708856!16s%2Fg%2F11fj049qxm?authuser=0&entry=ttu&g_ep=EgoyMDI0MTAyMC4xIKXMDSoASAFQAw%3D%3D"><ion-icon name="location-outline"></ion-icon></a></li>
+                            </ul>
+                        </div>
+                        <div class="location">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1885.9786966006764!2d72.86969633859303!3d19.021599045542974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7cf3949dda405%3A0xefd46c9d73152f82!2sVIDYALANKAR%20INSTITUTE%20OF%20TECHNOLOGY%2C%20Mumbai%2C%20Maharashtra%20400037!5e0!3m2!1sen!2sin!4v1727776679608!5m2!1sen!2sin" 
+                                allowfullscreen 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </footer>
+                <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+                <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+                <script src="Brewing_Equipments.js"></script>
+
+                
+        
+</body>
+</html>

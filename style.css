@@ -1,0 +1,228 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #fff3e0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+#home_header {
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-image: url(images/bg_img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#container h1 {
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+    font-size: 40pt;
+    color: #532805c4;
+    text-align: center;
+    padding-top: 5px;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 20px;
+    position: sticky;
+    top: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+    display: block;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgba(240, 175, 128, 0.4);
+    border-radius: 2px;
+}
+
+/* Welcome Section */
+.Welcome {
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.Welcome h1 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #532805c4;
+}
+
+.Welcome p {
+    margin: 0 auto;
+    max-width: 600px;
+    font-size: 1.1rem;
+    color: #532805c4;
+}
+
+/* Slideshow */
+.slideshow-container {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+/* Benefit Section */
+h2{
+    color: #532805c4;
+    text-align: center;
+    font-size: 30pt;
+}
+.benefit-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Benefit Cards */
+.benefit {
+    margin-top: 20px;
+    position: relative;
+    width: 400px; /* Set fixed width for uniformity */
+    height: 550px; /* Fixed height for consistency */
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.benefit h2 {
+    color: black;
+    margin-bottom: 10px;
+}
+
+.benefit p {
+    color: #000000;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.benefit img {
+    max-width: 80%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.order-btn {
+    background-color: #532805c4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: auto;
+    align-self: center;
+}
+
+.order-btn:hover {
+    background-color: #6d3a0dc4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .benefit-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .benefit {
+        width: 90%; /* Full width for smaller screens */
+        height: auto; /* Flexible height for responsiveness */
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}

@@ -1,0 +1,268 @@
+/*Shopping cart css*/
+
+
+
+/* Main Cart Container */
+.Container_cart {
+    display: flex;
+    flex-direction: column; /* Aligns child containers vertically */
+    align-items: center; /* Centers the child containers horizontally */
+    width: 70%;
+    padding: 20px;
+    margin-right: 188px;
+    gap: 20px; /* Adds space between each container */
+    padding-bottom: 150px;
+    min-height: calc(100vh - 100px); /* Ensure cart takes up space */
+ 
+}
+
+/* Individual containers inside the main container */
+.Container_coffee_cart, .Container_Subscription_cart, .Container_total_cart {
+    width: 100%;
+    max-width: 2000px; /* Optional: set a max width for better layout control */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    
+}
+
+/* Ensures even spacing for each section's content */
+.Container_coffee_cart h1, 
+.Container_Subscription_cart h1, 
+.Container_total_cart h1 {
+    margin-bottom: 20px;
+}
+
+
+.button-container {
+    margin-top: 20px;
+}
+
+
+
+.basket-items {
+    margin-bottom: 20px;
+}
+
+.subscription-basket-items{
+    margin-bottom: 20px;
+}
+
+.subscription-basket-items .item{
+    display: flex;
+    width: 100%; /* Adjust this as needed */
+    max-width: 800px; /* Set a max width to prevent it from stretching too wide */
+    align-items: flex-start;
+    border-bottom: 1px solid #ccc;
+}
+
+.total-price-items {
+    margin-bottom: 20px;
+}
+
+.total-price-items p {
+    display: flex;
+    width: 100%; /* Adjust this as needed */
+    max-width: 2000px; /* Set a max width to prevent it from stretching too wide */
+    font-weight: bold; /* Ensure consistency with your other sections */
+    font-size: 18px;
+    align-items: flex-start;
+    border-bottom: 2px solid #ccc;
+}
+
+.basket-items .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.basket-items .item img {
+    width: 200px;
+    height: 200px;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.basket-items .details {
+    flex-grow: 1;
+}
+
+.basket-items .details p {
+    margin: 5px 0;
+}
+
+.price {
+    font-weight: bold;
+    color: #444;
+}
+
+
+
+.button-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Basket Items Section */
+.basket-items {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: center; /* Center items */
+    margin-bottom: 20px;
+}
+
+/* Individual Item Styling */
+.item {
+    display: flex;
+    flex-direction: column; /* Stack image and details vertically */
+    align-items: center; /* Center items */
+    width: calc(33.33% - 20px);
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 300px;
+    max-height: 600px;
+    transition: transform 0.2s; /* Add hover effect */
+}
+
+.item:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+}
+
+/* Image Styling */
+.item img {
+    width: 90%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Item Description */
+.item p {
+    margin: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    color: #555; /* Slightly lighter color for text */
+}
+
+/* Price Styling */
+.item .price {
+    margin: 10px;
+    color: green;
+    font-size: 18px;
+}
+
+/* Total Price Container */
+.total-coffee-price {
+    text-align: right;
+    font-weight: bold;
+    font-size: 20px; /* Slightly larger for emphasis */
+    margin-top: 20px;
+}
+
+.total-subscription-price {
+    text-align: right;
+    font-weight: bold;
+    font-size: 20px; /* Slightly larger for emphasis */
+    margin-top: 20px;
+}
+
+
+.total-price-container {
+    text-align: right;
+    font-weight: bold;
+    font-size: 22px; /* Larger for final total emphasis */
+    color: #333;
+    margin-top: 30px;
+    padding-top: 10px;
+}
+
+
+
+
+/* Button Container */
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Button Styles */
+.button-container button {
+    background-color: #CC8A54;
+    border-radius: 5px;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+    background-color: #CC8A54;
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .Container_cart {
+        width: 95%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    
+    .item {
+        width: calc(50% - 20px); /* More space for larger items on tablet */
+    }
+    
+    .total-price-container, .total-cart-container {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .item {
+        width: calc(50% - 20px); /* 2 items per row on smaller devices */
+    }
+
+    .total-price-container, .total-cart-container {
+        text-align: center;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 500px) {
+    .item {
+        width: calc(100% - 20px); /* Single column on small screens */
+    }
+    
+    .button-container button {
+        width: 100%; /* Full-width button for small screens */
+        padding: 15px; /* Bigger padding for better touch interaction */
+    }
+
+    .total-price-container {
+        font-size: 16px; /* Smaller font on very small screens */
+    }
+}
+
+/*Shopping cart css end*/

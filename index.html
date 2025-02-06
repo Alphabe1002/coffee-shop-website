@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEAN BOUTIQUE</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="nav_cont">
+        <nav>
+            <button class="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="menu" id="menu">
+                <li><a id="Home" href="index.html">Home</a></li>
+                <li><a class="hover" id="CoffeeSelection" href="Coffee_Selection.html">Coffee Selection</a></li>
+                <li><a class="hover" id="BrewingEquipment" href="BrewingEquipment.html">Brewing Equipment</a></li>
+                <li><a class="hover" id="Events&Workshops" href="Events_and_Workshops.html">Events and Workshops</a></li>
+                <li><a class="hover" id="SpeicalOffers&Suscription" href="Offer_Subscription.html">Special Offers</a></li>
+                <li><a class="hover" id="ShoppingCart" href="ShoppingCart.html">Cart</a></li>
+                <li><a class="hover" id="login" href="login.html">Log In</a></li>
+                <li><a class="hover" id="Sign_up" href="sign_up.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const menu = document.querySelector('.menu');
+        let isTransitioning = false;
+
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (isTransitioning) return;
+            
+            isTransitioning = true;
+            hamburger.classList.toggle('active');
+            menu.classList.toggle('active');
+            
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 500);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !hamburger.contains(e.target) && menu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                menu.classList.remove('active');
+            }
+        });
+    </script>
+
+
+    <div id="popup" class="popup">
+       
+        <div class="popup-content">
+          <span class="close-btn">&times;</span>
+          <p class="welcome_pop">Welcome to our coffee shop!</p>
+          <p>Enjoy 10% off on your first coffee order!</p>
+          <p>Use code <strong>"FIRSTCOFFEE10"</strong> at checkout.</p>
+          
+          <button class="pop_order" id = "offer_button" >Sign Up</button>
+        </div>
+    </div>
+
+      
+    <!-- carousel -->
+    <div class="carousel">
+	
+        <!-- list item -->
+        <div class="list">
+            <div class="item">
+                <img alt="coffee_beans" src="coffee_beans.jpg">
+                <div class="content">
+                    <div class="author"></div>
+                    <div class="title">BEAN BOUTIQUE </div>
+                    <div class="topic"> COFFEE SHOP</div>
+                    <div class="des">
+                        <!-- lorem 50 -->
+                        At Bean Boutique, we offer a curated selection of artisanal coffee blends that tantalize your taste buds. Sourced from the finest beans around the globe, each blend is expertly crafted to deliver a rich and aromatic experience with every sip.
+                    </div>
+                    <div class="buttons">
+                        
+                        <button type="button">SUBSCRIBE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img alt="equipments    " src="equipments.jpg">
+                <div class="content">
+                    <div class="author"></div>
+                    <div class="title">BEAN BOUTIQUE </div>
+                    <div class="topic"> COFFEE SHOP</div>
+                    <div class="des">
+                        At Bean Boutique, we provide a premium range of brewing equipment to enhance your coffee experience. From espresso machines to pour-over sets, our carefully selected tools ensure you achieve the perfect brew every time. Explore our collection and elevate your coffee-making skills with high-quality gear designed for both beginners and enthusiasts.
+                    </div>
+                    <div class="buttons">
+                        
+                        <button>SUBSCRIBE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img alt="iamge" src="images/event.jpg">
+                <div class="content">
+                    <div class="author"></div>
+                    <div class="title">BEAN BOUTIQUE </div>
+                    <div class="topic"> COFFEE SHOP</div>
+                    <div class="des">
+                        Join us at Bean Boutique for exciting events that celebrate coffee culture! From hands-on brewing workshops to tasting sessions featuring unique blends, our events cater to all coffee lovers. Connect with fellow enthusiasts, learn expert tips, and indulge in the rich flavors of our finest coffees. Reserve your spot today!
+                    </div>
+                    <div class="buttons">
+                        
+                        <button>SUBSCRIBE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img alt="coffee shop" src="images/coffee_shop2.jpg">
+                <div class="content">
+                    <div class="author"></div>
+                    <div class="title">BEAN BOUTIQUE </div>
+                    <div class="topic"> COFFEE SHOP</div>
+                    <div class="des">
+                        At Bean Boutique, we are passionate about coffee and dedicated to providing an exceptional experience for all coffee lovers. Our cozy shop offers a wide selection of expertly crafted beverages, from rich espressos to creamy lattes, made from the finest beans sourced globally. We believe in quality, sustainability, and community, fostering a welcoming atmosphere where customers can relax, connect, and enjoy the art of coffee. Join us for our unique blends, special events, and workshops designed to deepen your appreciation for coffee. At Bean Boutique, every cup tells a story!
+                    </div>
+                    <div class="buttons">
+                        
+                        <button>SUBSCRIBE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- list thumnail -->
+        <div class="thumbnail">
+            <div class="item">
+                <img alt="coffee beans" src="coffee_beans.jpg">
+                <div class="content">
+                    <div class="title">
+                        Name Slider
+                    </div>
+                    <div class="description">
+                        Description
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img alt="equipment" src="equipments.jpg">
+                <div class="content">
+                    <div class="title">
+                        Name Slider
+                    </div>
+                    <div class="description">
+                        Description
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img alt="events" src="images/event.jpg">
+                <div class="content">
+                    <div class="title">
+                        Events
+                    </div>
+                    <div class="description">
+                        Meet the Roaster
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img alt="coffee shop" src="images/coffee_shop2.jpg">
+                <div class="content">
+                    <div class="title">
+                        Bean Boutique
+                    </div>
+                    <div class="description">
+                        Description
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- next prev -->
+
+        <div class="arrows">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+        <!-- time running -->
+        <div class="time"></div>
+    </div>
+
+    <script src="app.js"></script>
+	
+	<!--products new -->
+	<div class="hero">
+        <div class="hero-content">
+            <h1>Bean Boutique</h1>
+            <p>Where Every Cup Tells a Story</p>
+            <div class="cta-buttons">
+                <button class="cta-button" type="button" >View Our Menu</button>
+                <button class="cta-button">Book a Tasting</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">Our Journey</h2>
+        <p>What started in 2015 as a small cart in the local farmers' market has blossomed into Portland's beloved neighborhood coffee sanctuary. At Bean Boutique, we believe that exceptional coffee is more than just a beverage—it's a journey of discovery, a moment of connection, and a celebration of craftsmanship.</p>
+        
+        <div class="features">
+            <div class="feature-card">
+                <h3>Small-Batch Roasting</h3>
+                <p>We roast in small batches daily, ensuring peak freshness and flavor</p>
+            </div>
+            <div class="feature-card">
+                <h3>Direct Trade Partnerships</h3>
+                <p>Building sustainable relationships with farmers worldwide</p>
+            </div>
+            <div class="feature-card">
+                <h3>Artisanal Approach</h3>
+                <p>Each drink is crafted with precision and care</p>
+            </div>
+            <div class="feature-card">
+                <h3>Community Focus</h3>
+                <p>Regular workshops, tasting events, and brewing classes</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section1">
+        <h2 class="section-title">Today's Featured Roasts</h2>
+        <div class="coffee-list">
+            <div class="coffee-item">
+                <h3>Ethiopian Yirgacheffe</h3>
+                <p>Floral notes with hints of bergamot and jasmine</p>
+            </div>
+            <div class="coffee-item">
+                <h3>Colombian Single Origin</h3>
+                <p>Rich chocolate undertones with a caramel finish</p>
+            </div>
+            <div class="coffee-item">
+                <h3>House Blend</h3>
+                <p>A perfectly balanced medium roast with notes of nuts and citrus</p>
+            </div>
+        </div>
+    </section>
+
+<!--ENd here new-->
+			    <footer>
+                    <div class="waves">
+                        <div class="wave" id="wave1"></div>
+                        <div class="wave" id="wave2"></div>
+                        <div class="wave" id="wave3"></div>
+                        <div class="wave" id="wave4"></div>
+                    </div>
+                    <div class="footer">
+                        <div class="webs-details">
+                            <p>A standing desk website typically provides <br>information and products related to ergonomic<br> workstations that allow users to alternate between <br>sitting and standing positions while working....</p>
+                        </div>
+                        <div class="row social_icon">
+                            <ul>
+                                <li><a href="https://www.facebook.com/login/"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                                <li><a href="https://x.com/i/flow/login?redirect_after_login=%2Fsteeevg"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                                <li><a href="https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fonetap%2F%3F__coig_login%3D1"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                                <li><a href="https://www.google.com/maps/place/VIIE+-+Vidyalankar+Institute+for+International+Education/@19.0216579,72.8683107,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7cf699771b8df:0x3f49b4a04fc3d68c!8m2!3d19.0216579!4d72.8708856!16s%2Fg%2F11fj049qxm?authuser=0&entry=ttu&g_ep=EgoyMDI0MTAyMC4xIKXMDSoASAFQAw%3D%3D"><ion-icon name="location-outline"></ion-icon></a></li>
+                            </ul>
+                        </div>
+                        <div class="location">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1885.9786966006764!2d72.86969633859303!3d19.021599045542974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7cf3949dda405%3A0xefd46c9d73152f82!2sVIDYALANKAR%20INSTITUTE%20OF%20TECHNOLOGY%2C%20Mumbai%2C%20Maharashtra%20400037!5e0!3m2!1sen!2sin!4v1727776679608!5m2!1sen!2sin" 
+                                allowfullscreen 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </footer>
+                <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+                <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+                <script src="index.js"></script>
+
+                
+        
+</body>
+</html>

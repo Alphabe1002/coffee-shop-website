@@ -1,0 +1,151 @@
+/* Special Offers and Subscriptions Section Styles */
+#subscriptions {
+    padding: 40px;
+    margin: 20px auto;
+    border-radius: 15px;
+    border-bottom: 3px solid #A04112; /* Underline effect */
+    max-width: 800px; /* Center and limit width */
+}
+
+#offers{
+    padding: 40px;
+    margin: 20px auto;
+    border-radius: 5px;
+    border-bottom: 3px solid #A04112; /* Underline effect */
+    max-width: 100%;
+}
+
+.offers-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start; /* Align items from the start */
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0 auto; /* Center the container */
+    max-width: 1200px; /* Or whatever max-width suits your design */
+}
+
+/* Styles for the Offers and Subscription Cards */
+.offer, .subscription {
+    background-color: #e7c5a1; /* Soft background for cards */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+
+.offer {
+    background-color: #e7c5a1;
+    padding: 20px;
+    margin: 0; /* Remove margin since we're using gap */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 300px;
+    min-width: 250px;
+    max-width: 100%;
+}
+
+.offer:hover {
+    transform: translateY(-5px); /* Slightly lift the card */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.offer:hover, .subscription:hover {
+    transform: translateY(-5px); /* Slightly lift the card */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    border-bottom: 3px solid #A04112 ; /* Underline effect */
+    color: #A04112; /* Main color for section headings */
+    font-size: 2.5rem; /* Larger section heading */
+    text-align: center; /* Centered heading */
+    margin-left: auto; /* Center the line */
+    margin-right: auto; /* Center the line */
+    width: 70%;
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+h3 {
+    color: #3c2b1f; /* Darker shade for offer titles */
+    margin-bottom: 10px; /* Space below titles */
+    font-size: 1.8rem; /* Increase title size */
+}
+
+p {
+    margin: 10px 0;
+    line-height: 1.6; /* Improve readability */
+}
+
+/* List Styles */
+ul {
+    list-style-type: disc; /* Bulleted list */
+    padding-left: 20px; /* Indentation */
+}
+
+/* Button Styles */
+.shop-now, .subscribe-now {
+    background-color: #A04112; /* Button background color */
+    color: white; /* Button text color */
+    border: none;
+    border-radius: 25px; /* Rounded corners for buttons */
+    padding: 10px 20px; /* Padding for buttons */
+    font-size: 1.1rem; /* Button text size */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px; /* Space above button */
+}
+
+.shop-now:hover, .subscribe-now:hover {
+    background-color: #3c2b1f; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+
+/* For tablets and smaller desktops */
+@media (max-width: 1200px) {
+    .offers-container {
+        margin-left: 0;
+        width: 100%;
+    }
+    .offer {
+        flex: 1 1 calc(45% - 20px); /* Each offer takes up 45% on medium screens */
+        max-width: calc(45% - 20px);
+    }
+}
+
+/* For smaller tablets and larger phones */
+@media (max-width: 768px) {
+    .offers-container {
+        margin-left: 0;
+        width: 100%;
+    }
+    .offer {
+        flex: 1 1 calc(100% - 20px); /* Each offer takes up full width on small screens */
+        max-width: calc(100% - 20px);
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+    h2 {
+        font-size: 2rem; /* Adjust heading size */
+        width: 90%; /* Adjust width for mobile */
+    }
+    
+    .offer {
+        flex: 1 1 calc(100% - 20px); /* Full width for mobile */
+        max-width: calc(100% - 20px);
+    }
+
+    .shop-now, .subscribe-now {
+        padding: 8px 15px; /* Adjust button padding for mobile */
+        font-size: 1rem;
+    }
+}

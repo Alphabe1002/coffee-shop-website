@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="Shopping_Cart.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body id = "shopping-cart">
+	
+
+    <div class="nav_cont">
+        <nav>
+            <button class="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="menu" id="menu">
+                <li><a id="Home" href="index.html">Home</a></li>
+                <li><a class="hover" id="CoffeeSelection" href="Coffee_Selection.html">Coffee Selection</a></li>
+                <li><a class="hover" id="BrewingEquipment" href="BrewingEquipment.html">Brewing Equipment</a></li>
+                <li><a class="hover" id="Events&Workshops" href="Events_and_Workshops.html">Events and Workshops</a></li>
+                <li><a class="hover" id="SpeicalOffers&Suscription" href="Offer_Subscription.html">Special Offers</a></li>
+                <li><a class="hover" id="ShoppingCart" href="ShoppingCart.html">Cart</a></li>
+                <li><a class="hover" id="login" href="login.html">Log In</a></li>
+                <li><a class="hover" id="Sign_up" href="sign_up.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const menu = document.querySelector('.menu');
+        let isTransitioning = false;
+
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (isTransitioning) return;
+            
+            isTransitioning = true;
+            hamburger.classList.toggle('active');
+            menu.classList.toggle('active');
+            
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 500);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !hamburger.contains(e.target) && menu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                menu.classList.remove('active');
+            }
+        });
+    </script>
+
+ <div class="Container_cart"> 
+
+    <div class="Container_coffee_cart">
+        <section class="coffee_cart">
+
+            <h1>Coffee Cart</h1>
+
+            <div class="basket-items" id="basket-items"></div>
+            
+            <div class="total-coffee-price">
+                <p>Total Coffee Price: <span id="total-coffee-price">₹0.00</span></p>
+            </div>
+            
+            <div class="button-container">
+                <button onclick="clearBasket()">Clear Coffee Item</button>
+            </div>
+
+        </section>
+
+    </div>
+
+    <div class="Container_Subscription_cart">
+
+        <section class="Subscription_cart">
+                
+                <h1>Subscription Plan</h1>
+
+                <div class="subscription-basket-items" id="subscription-basket-items">
+                </div>
+
+                <div class="total-subscription-price">
+                    <p>Total Subscription Price: <span id="total-subscription-price">₹0.00</span></p>
+                </div>
+
+                <div class="button-container">
+                    <button onclick="clear_Subscriptiont()">remove subscription plan</button>
+                </div>
+
+        </section>
+
+    </div>
+
+
+    <div class="Container_total_cart">
+        <section class="total_cart">
+            <h1>Cart Summary</h1>
+            
+            <div class="total-price-items" id="total-price-items">
+                <p><strong>Price Breakdown:</strong></p>
+                <p>Total Coffee Price: <span id="total-coffee-price">₹0.00</span></p>
+                <p>Total Subscription Price: <span id="total-subscription-price">₹0.00</span></p>
+            </div>
+    
+            <div class="total-price-container">
+                <p>Total Cart Price (Coffee + Subscription): <span id="total-cart-price">₹0.00</span></p>
+            </div>
+            <div class="button-container">
+                <button onclick="makePayment()">Make Payment</button>
+                <button onclick="clearAll()">Clear All Items</button>
+            </div>
+        </section>
+    </div>
+    
+    
+</div>
+
+
+    <footer>
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+        <div class="footer">
+            <div class="webs-details">
+                <p>A standing desk website typically provides <br>information and products related to ergonomic<br> workstations that allow users to alternate between <br>sitting and standing positions while working....</p>
+            </div>
+            <div class="row social_icon">
+                <ul>
+                    <li><a href="https://www.facebook.com/login/"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                    <li><a href="https://x.com/i/flow/login?redirect_after_login=%2Fsteeevg"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                    <li><a href="https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fonetap%2F%3F__coig_login%3D1"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                    <li><a href="https://www.google.com/maps/place/VIIE+-+Vidyalankar+Institute+for+International+Education/@19.0216579,72.8683107,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7cf699771b8df:0x3f49b4a04fc3d68c!8m2!3d19.0216579!4d72.8708856!16s%2Fg%2F11fj049qxm?authuser=0&entry=ttu&g_ep=EgoyMDI0MTAyMC4xIKXMDSoASAFQAw%3D%3D"><ion-icon name="location-outline"></ion-icon></a></li>
+                </ul>
+            </div>
+            <div class="location">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1885.9786966006764!2d72.86969633859303!3d19.021599045542974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7cf3949dda405%3A0xefd46c9d73152f82!2sVIDYALANKAR%20INSTITUTE%20OF%20TECHNOLOGY%2C%20Mumbai%2C%20Maharashtra%20400037!5e0!3m2!1sen!2sin!4v1727776679608!5m2!1sen!2sin" 
+                    allowfullscreen 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script src="Coffee_Selection.js"></script>
+    <script src="Cart.js"></script>
+
+
+</body>
+</html>

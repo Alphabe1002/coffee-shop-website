@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events & Workshops</title>
+    <link rel="stylesheet" href="Event_and_Workshop.css">
+</head>
+<body>
+    <div class="nav_cont">
+        <nav>
+            <button class="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="menu" id="menu">
+                <li><a id="Home" href="index.html">Home</a></li>
+                <li><a class="hover" id="CoffeeSelection" href="Coffee_Selection.html">Coffee Selection</a></li>
+                <li><a class="hover" id="BrewingEquipment" href="BrewingEquipment.html">Brewing Equipment</a></li>
+                <li><a class="hover" id="Events&Workshops" href="Events_and_Workshops.html">Events and Workshops</a></li>
+                <li><a class="hover" id="SpeicalOffers&Suscription" href="Offer_Subscription.html">Special Offers</a></li>
+                <li><a class="hover" id="ShoppingCart" href="ShoppingCart.html">Cart</a></li>
+                <li><a class="hover" id="login" href="login.html">Log In</a></li>
+                <li><a class="hover" id="Sign_up" href="sign_up.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const menu = document.querySelector('.menu');
+        let isTransitioning = false;
+
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (isTransitioning) return;
+            
+            isTransitioning = true;
+            hamburger.classList.toggle('active');
+            menu.classList.toggle('active');
+            
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 500);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !hamburger.contains(e.target) && menu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                menu.classList.remove('active');
+            }
+        });
+    </script>
+
+    <section class="events-workshops">
+        <h2>Upcoming Events & Workshops</h2>
+        <div class="event-list">
+            <div class="event">
+                <h3>Coffee Tasting Session</h3>
+                <p>Join us for an exclusive coffee tasting session. Learn about different coffee beans and flavors.</p>
+                <p><strong>Date:</strong> 30th October 2024</p>
+                <button onclick="registerEvent('Coffee Tasting Session')">Register</button>
+            </div>
+            <div class="event">
+                <h3>Brewing Class</h3>
+                <p>Learn the art of brewing from our experts. Bring out the best flavors in every cup!</p>
+                <p><strong>Date:</strong> 5th November 2024</p>
+                <button onclick="registerEvent('Brewing Class')">Register</button>
+            </div>
+            <div class="event">
+                <h3>Meet the Roaster</h3>
+                <p>Get insights into the roasting process and enjoy freshly roasted coffee.</p>
+                <p><strong>Date:</strong> 12th November 2024</p>
+                <button onclick="registerEvent('Meet the Roaster')">Register</button>
+            </div>
+            <div class="event">
+                <h3>Latte Art Workshop</h3>
+                <p>Master the art of creating beautiful designs in your coffee with our barista experts.</p>
+                <p><strong>Date:</strong> 18th November 2024</p>
+                <button onclick="registerEvent('Latte Art Workshop')">Register</button>
+            </div>
+            <div class="event">
+                <h3>Home Brewing Techniques</h3>
+                <p>Learn the best techniques to brew amazing coffee at home with simple equipment.</p>
+                <p><strong>Date:</strong> 25th November 2024</p>
+                <button onclick="registerEvent('Home Brewing Techniques')">Register</button>
+            </div>
+            <div class="event">
+                <h3>Coffee and Dessert Pairing</h3>
+                <p>Discover how to perfectly pair different types of coffee with various desserts.</p>
+                <p><strong>Date:</strong> 2nd December 2024</p>
+                <button onclick="registerEvent('Coffee and Dessert Pairing')">Register</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form Modal -->
+    <div id="registrationModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>Register for <span id="eventTitle"></span></h3>
+            <form id="registrationForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="event">Event:</label>
+                <input type="text" id="event" name="event" readonly>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+        <div class="footer">
+            <div class="webs-details">
+                <p>A standing desk website typically provides <br>information and products related to ergonomic<br> workstations that allow users to alternate between <br>sitting and standing positions while working....</p>
+            </div>
+            <div class="row social_icon">
+                <ul>
+                    <li><a href="https://www.facebook.com/login/"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                    <li><a href="https://x.com/i/flow/login?redirect_after_login=%2Fsteeevg"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                    <li><a href="https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fonetap%2F%3F__coig_login%3D1"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                    <li><a href="https://www.google.com/maps/place/VIIE+-+Vidyalankar+Institute+for+International+Education/@19.0216579,72.8683107,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7cf699771b8df:0x3f49b4a04fc3d68c!8m2!3d19.0216579!4d72.8708856!16s%2Fg%2F11fj049qxm?authuser=0&entry=ttu&g_ep=EgoyMDI0MTAyMC4xIKXMDSoASAFQAw%3D%3D"><ion-icon name="location-outline"></ion-icon></a></li>
+                </ul>
+            </div>
+            <div class="location">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1885.9786966006764!2d72.86969633859303!3d19.021599045542974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7cf3949dda405%3A0xefd46c9d73152f82!2sVIDYALANKAR%20INSTITUTE%20OF%20TECHNOLOGY%2C%20Mumbai%2C%20Maharashtra%20400037!5e0!3m2!1sen!2sin!4v1727776679608!5m2!1sen!2sin" 
+                    allowfullscreen 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function registerEvent(eventName) {
+            document.getElementById('eventTitle').innerText = eventName;
+            document.getElementById('event').value = eventName;
+            document.getElementById('registrationModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('registrationModal').style.display = 'none';
+        }
+    </script>
+
+
+</body>
+</html>
